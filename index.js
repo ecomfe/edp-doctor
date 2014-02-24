@@ -21,6 +21,9 @@ exports.start = function (args, opts) {
     // 如果output目录存在，检查css引用的img是否正确
     require( './lib/check-output.js' )( args, opts );
 
+    // 检查项目的配置是否正常
+    require( './lib/check-project-config.js' )( args, opts );
+
     // 检查项目中是否存在相同的文件
     // TODO
 }

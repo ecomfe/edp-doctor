@@ -1,6 +1,6 @@
 {
   "name": "edp-doctor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "edp-doctor =======",
   "main": "index.js",
   "scripts": {
