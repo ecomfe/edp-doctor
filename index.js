@@ -24,6 +24,9 @@ exports.start = function (args, opts) {
     // 检查项目的配置是否正常
     require( './lib/check-project-config.js' )( args, opts );
 
+    // 检查module.conf配置内容是否正常，比如paths，deps之类的
+    require( './lib/check-module-config.js' )( args, opts );
+
     // 检查项目中是否存在相同的文件
     // TODO
 }
