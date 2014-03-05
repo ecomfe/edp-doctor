@@ -29,6 +29,17 @@ exports.start = function (args, opts) {
 
     // 检查项目中是否存在相同的文件
     // TODO
+
+    // 执行自定义的检查
+    // var rootDirectory = edp.path.getRootDirectory();
+    var rootDirectory = process.cwd();
+    if ( rootDirectory ) {
+        var file = edp.path.join( rootDirectory, 'edp-doctor.js' );
+        var doctor = require( file );
+        if ( typeof doctor.diagnosis === 'function' ) {
+            doctor.diagnosis( edp );
+        }
+    }
 }
 
 
