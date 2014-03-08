@@ -1,18 +1,19 @@
 /***************************************************************************
- * 
+ *
  * Copyright (c) 2014 Baidu.com, Inc. All Rights Reserved
- * $Id$ 
- * 
+ * $Id$
+ *
  **************************************************************************/
- 
- 
- 
+
+
+
 /**
  * index.js ~ 2014/02/12 21:25:18
  * @author leeight(liyubei@baidu.com)
- * @version $Revision$ 
- * @description 
- *  
+ *         ielgnaw(wuji0223@gmail.com)
+ * @version $Revision$
+ * @description
+ *
  **/
 var fs = require('fs');
 var edp = require( 'edp-core' );
@@ -26,6 +27,9 @@ exports.start = function (args, opts) {
 
     // 检查module.conf配置内容是否正常，比如paths，deps之类的
     require( './lib/check-module-config.js' )( args, opts );
+
+    // 检查引用路径是否正确
+    require( './lib/check-require-path.js' )( args, opts );
 
     // 检查项目中是否存在相同的文件
     // TODO
