@@ -1,0 +1,9 @@
+{
+    "underscore": {
+        "1.4.4": {
+            "name": "underscore",
+            "version": "1.4.4",
+            "main": "underscore"
+        }
+    }
+}

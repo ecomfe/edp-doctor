@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/ecomfe/edp-doctor/issues"
   },
+  "scripts": {
+      "test": "make -C test"
+  },
   "homepage": "https://github.com/ecomfe/edp-doctor"
 }
