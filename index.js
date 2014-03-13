@@ -39,11 +39,17 @@ exports.start = function (args, opts) {
     var rootDirectory = process.cwd();
     if ( rootDirectory ) {
         var file = edp.path.join( rootDirectory, 'edp-doctor.js' );
-        var doctor = require( file );
-        if ( typeof doctor.diagnosis === 'function' ) {
-            doctor.diagnosis( edp );
+        if ( fs.existsSync( file ) ) {
+            var doctor = require( file );
+            if ( typeof doctor.diagnosis === 'function' ) {
+                doctor.diagnosis( edp );
+            }
         }
     }
+}
+
+if ( module === require.main ) {
+    exports.start();
 }
 
 
