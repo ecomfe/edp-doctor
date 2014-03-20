@@ -1,0 +1,170 @@
+<!-- target: TPL_validation_create_stepValidate -->
+<div class="bk-link-nav clearfix" style="">
+    <a href="#/validation/list">企业百科管理</a>
+    <span>&gt;&gt;填写企业百科申请</span>
+    <hr/>
+    <div class="tracker">
+        <div class="tracker-item-wrapper tracker-item-wrapper-first">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写企业资质</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写行业资质</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper tracker-item-wrapper-current">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写企业百科申请</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">
+                确认信息并付款
+            </div>
+            <div class="item-tracker-end"></div>
+        </div>
+    </div>
+</div>
+<form class="setting-form"
+    data-ui-type="Form"
+    data-ui-id="form"
+    data-ui-auto-validate="true"
+    method="POST">
+    <div class="form-title-bar">填写企业百科申请</div>
+    <div class="form-data-body">
+        <!-- if: ${defaultFormData.failedReason} -->
+        <div class="form-row">
+            <div class="form-key form-key-validate red">审批拒绝原因：</div>
+            <div class="form-value">
+                <span class="red"
+                    data-ui-id="failedReason"
+                    data-ui-type="Label">${defaultFormData.failedReason}</span>
+            </div>
+        </div>
+        <!-- /if -->
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>申请的百科词条：</div>
+            <div class="form-value">
+                <span data-ui-id="wordName"
+                    data-ui-type="Label"
+                    name="wordName"><!-- if: ${defaultFormData.wordName} -->${defaultFormData.wordName}
+                    <!-- else -->--<!-- /if -->
+                </span>
+                <div>
+                    <!-- if: ${defaultFormData.wordStatus} === "NOT_CREATED" -->
+                    <span data-ui-id="wordInfo"
+                        data-ui-type="Label"
+                        class="red">该词条尚未创建，请进入百科创建企业词条。
+                    </span>
+                    <a target="_blank" href="http://baike.baidu.com/enterprise/create?from=www2">立即创建</a>
+                    <!-- elif: ${defaultFormData.wordStatus} === "UNAVAILABLE" -->
+                    <span data-ui-id="wordInfo"
+                        data-ui-type="Label"
+                        class="red">该词条已被预订，请联系客服咨询。
+                    </span>
+                    <!-- /if -->
+                </div>
+
+                <div class="bk-aux"><span>注：申请的词条名与企业名称须完全一致。</div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>绑定百度帐号：</div>
+            <div class="form-value">
+                <input data-ui-id="baiduAccount"
+                    data-ui-type="TextBox"
+                    data-ui-required="required"
+                    data-ui-mode="text"
+                    name="baiduAccount"
+                    value="${defaultFormData.baiduAccount}" />
+                <span data-ui-id="accountInfo"
+                        data-ui-type="Label"
+                        data-ui-mode="text"
+                        class="red">
+                </span>
+                <div> 
+                    <span class="bk-aux">请输入帐号用户名。该帐号是您编辑企业百科帐号的授权帐号，请妥善保管。</span>
+                    <a href="https://passport.baidu.com/v2/?reg&regType=1&tpl=wk" target="_blank">没有百度帐号？</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">企业官网域名：</div>
+            <div class="form-value">
+                <input data-ui-id="officialSite"
+                    data-ui-type="TextBox"
+                    data-ui-mode="text"
+                    maxlength="1024"
+                    name="officialSite"
+                    value="${defaultFormData.officialSite}" />
+                <div><span class="bk-aux">1024字节以内。</span></div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>首选联系人：</div>
+            <div class="form-value">
+                <input data-ui-id="contact1"
+                    data-ui-type="TextBox"
+                    data-ui-required="required"
+                    data-ui-mode="text"
+                    maxlength="20"
+                    name="contact1"
+                    value="<!-- if: ${defaultFormData.contact1} -->${defaultFormData.contact1}<!-- else -->${contactInfo.contact1}<!-- /if -->" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>首选联系人手机号：</div>
+            <div class="form-value">
+                <input data-ui-id="moblie1"
+                    data-ui-type="TextBox"
+                    data-ui-pattern="${rule.phone.pattern}"
+                    data-ui-required="required"
+                    data-ui-mode="text"
+                    name="contactCellPhone1"
+                    value="<!-- if: ${defaultFormData.contactCellPhone1} -->${defaultFormData.contactCellPhone1}<!-- else -->${contactInfo.contactCellPhone1}<!-- /if -->" />
+                <div><span class="bk-aux">请正确填写联系方式，以便工作人员回拨核实。手机号或固话均可。</span></div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">备选联系人：</div>
+            <div class="form-value">
+                <input data-ui-id="contact2"
+                    data-ui-type="TextBox"
+                    data-ui-mode="text"
+                    name="contact2"
+                    maxlength="20"
+                    value="<!-- if: ${defaultFormData.contact2} -->${defaultFormData.contact2}<!-- else -->${contactInfo.contact2}<!-- /if -->" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">备选联系人手机号：</div>
+            <div class="form-value">
+                <input data-ui-id="moblie2"
+                    data-ui-type="TextBox"
+                    data-ui-pattern="${rule.phone.pattern}"
+                    data-ui-mode="text"
+                    name="contactCellPhone2"
+                    value="<!-- if: ${defaultFormData.contactCellPhone2} -->${defaultFormData.contactCellPhone2}<!-- else -->${contactInfo.contactCellPhone2}<!-- /if -->" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-value">
+            <button data-ui-type="Button" 
+                data-ui-id="submit"
+                data-ui-skin="winter"
+                type="submit">下一步</button>
+            <button data-ui-type="Button"
+                data-ui-id="prevButton"
+                type="button">返回上一步</button>
+            <button data-ui-type="Button" 
+                data-ui-id="cancel"
+                data-ui-skin="link"
+                type="button">取消</button>
+        </div>
+    </div>
+</form>

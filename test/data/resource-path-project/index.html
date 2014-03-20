@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>企业百科|百度推广</title>
+    <link rel="SHORTCUT ICON" href="http://www.baidu.com/favicon.ico">
+    <link rel="stylesheet" href="src/common/css/main.less" />
+    <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-10/esl.js"></script>
+</head>
+
+<body>
+    <!--[if IE 6]>
+    <div class="layout-ie6-out"><div class="layout-ie6-in">
+    <![endif]-->
+
+    <div class="header">
+        <a class="logo" href="#" target="_blank"><img alt="" title="" src="src/codmmon/img/logo.png" width="200" height="50"></a>
+        <div data-ui-type="Tab" data-ui-id="nav">
+            <ul data-role="navigator">
+            </ul>
+        </div>
+        <div class="user-info">
+            <a class="user-name">
+                <span data-ui="type:Label;id:userName;"></span>
+            </a>
+            <a href="http://tuiguang.baidu.com">返回</a>
+        </div>
+    </div>
+
+    <div class="main-area">
+        <div id="main"></div>
+        <div class="copyright">©2014 Baidu</div>
+    </div>
+    <!--[if IE 6]></div></div><![endif]-->
+
+    <script>
+
+        require.config({
+            'baseUrl': 'src',
+            'paths': {
+                'tpl': 'common/ecma/tpl',
+                'ecma': 'common/ecma'
+            },
+            'packages': [
+                {
+                    'name': 'ef',
+                    'location': '../dep/ef/3.1.0-alpha.3/src',
+                    'main': 'main'
+                },
+                {
+                    'name': 'er',
+                    'location': '../dep/er/3.1.0-alpha.6/src',
+                    'main': 'main'
+                },
+                {
+                    'name': 'mini-event',
+                    'location': '../dep/mini-event/1.0.0/src',
+                    'main': 'main'
+                },
+                {
+                    'name': 'etpl',
+                    'location': '../dep/etpl/2.0.8/src',
+                    'main': 'main'
+                },
+                {
+                    'name': 'esui',
+                    'location': '../dep/esui/3.1.0-alpha.6/src',
+                    'main': 'main'
+                },
+                {
+                    'name': 'underscore',
+                    'location': '../dep/underscore/1.4.4/src',
+                    'main': 'underscore'
+                },
+                {
+                    'name': 'moment',
+                    'location': '../dep/moment/2.0.0/src',
+                    'main': 'moment'
+                },
+                {
+                    'name': 'esf-ms',
+                    'location': '../dep/esf-ms/1.0.2/src'
+                },
+                {
+                    'name': 'est',
+                    'location': '../dep/est/1.1.0/src'
+                },
+                {
+                    'name': 'urijs',
+                    'location': '../dep/urijs/1.12.0/src',
+                    'main': 'URI'
+                }
+            ]
+        });
+
+        require( [ 'common/main' ] , function ( main ) {
+            main.init();
+        });
+
+    </script>
+</body>
+</html>

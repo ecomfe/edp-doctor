@@ -1,0 +1,192 @@
+<!-- target: TPL_validation_check_check -->
+<div class="bk-link-nav clearfix" style="">
+    <a href="#/validation/list">企业百科管理</a>
+    <span>&gt;&gt;填写企业百科申请</span>
+    <hr/>
+    <div class="tracker">
+        <div class="tracker-item-wrapper tracker-item-wrapper-first">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写企业资质</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写行业资质</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写企业百科申请</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper tracker-item-wrapper-current">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">
+                确认信息并付款
+            </div>
+            <div class="item-tracker-end"></div>
+        </div>
+    </div>
+</div>
+<form class="setting-form"
+    data-ui-type="Form"
+    data-ui-id="form"
+    data-ui-auto-validate="true"
+    method="POST">
+    <div class="form-title-bar">企业资质</div>
+    <div class="form-data-body">
+        <div class="form-row">
+            <div class="form-key form-key-validate">主体类型：</div>
+            <div class="form-value">
+                ${defaultFormData.enterpriseInfo.enterpriseType}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">资质文件编号或登记号：</div>
+            <div class="form-value">
+                ${defaultFormData.enterpriseInfo.regNo}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">资质主体名称：</div>
+            <div class="form-value">
+                ${defaultFormData.enterpriseInfo.enterpriseName}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">资质文件图片：</div>
+            <div class="form-value">
+                <a target="_blank" href="${defaultFormData.enterpriseInfo.previewUrl}">查看原图</a>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">资质有效期至：</div>
+            <div class="form-value">
+                ${defaultFormData.enterpriseInfo.dateEnd}
+            </div>
+        </div>
+    </div>
+
+    <div class="form-title-bar">行业资质</div>
+    <div class="form-data-body">
+        <!-- for: ${defaultFormData.industryInfo} as ${info} -->
+        <div class="form-row">
+            <div class="form-key form-key-validate">行业类型：</div>
+            <div class="form-value">
+                <span>${info.industryType}</span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">资质文件编号或登记号：</div>
+            <div class="form-value">
+                <span>${info.regNo}</span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">行业主体名称：</div>
+            <div class="form-value">
+                <span>${info.industryName}</span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">资质文件图片：</div>
+            <div class="form-value">
+                <a target="_blank" href="${info.previewUrl}">查看原图</a>
+            </div>
+        </div>
+        <div class="form-row" style="margin-bottom:15px;">
+            <div class="form-key form-key-validate">资质有效期至：</div>
+            <div class="form-value">
+                <span>${info.dateEnd}</span>
+            </div>
+        </div>
+        <!-- /for -->
+    </div>
+
+    <div class="form-title-bar">申请信息</div>
+    <div class="form-data-body">
+        <div class="form-row">
+            <div class="form-key form-key-validate">词条名称：</div>
+            <div class="form-value">
+                <span data-ui-id="wordName"
+                    data-ui-type="Label">${defaultFormData.validationInfo.wordName}
+                </span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">绑定百度帐号：</div>
+            <div class="form-value">
+                <span data-ui-id="baiduAccount"
+                    data-ui-type="Label">${defaultFormData.validationInfo.baiduAccount}
+                </span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">企业官网域名：</div>
+            <div class="form-value">
+                <span data-ui-id="officialSite"
+                    data-ui-type="Label">${defaultFormData.validationInfo.officialSite}
+                </span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">首选联系人：</div>
+            <div class="form-value">
+                <div class="form-value">
+                <span data-ui-id="contact1"
+                    data-ui-type="Label">${defaultFormData.validationInfo.contact1}
+                </span>
+            </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">首选联系人手机号：</div>
+            <div class="form-value">
+                <span data-ui-id="contactCellPhone1"
+                    data-ui-type="Label">${defaultFormData.validationInfo.contactCellPhone1}
+                </span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">备选联系人：</div>
+            <div class="form-value">
+                <span data-ui-id="contact2"
+                    data-ui-type="Label">${defaultFormData.validationInfo.contact2}
+                </span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate">备选联系人手机号：</div>
+            <div class="form-value">
+                <span data-ui-id="contactCellPhone2"
+                    data-ui-type="Label">${defaultFormData.validationInfo.contactCellPhone2}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="form-title-bar">企业百科词条页效果demo</div>
+    <div class="form-data-body">
+        <div class="form-row">
+            <img src="../../src/common/img/preview.png" alt=""/>
+        </div>
+    </div>
+    <!-- if: !${defaultFormData.hasPayed} -->
+    <div class="form-title-bar">您需支付的金额为：${defaultFormData.paymentPrice}元</div>
+    <!-- /if -->
+    <div class="form-row">
+        <button data-ui-type="Button"
+                data-ui-id="pay"
+                data-ui-skin="spring"
+                type="Button">
+                <!-- if: !${defaultFormData.hasPayed} -->
+                付款
+                <!-- else -->
+                提交审批
+                <!-- /if -->
+                </button>
+        <button data-ui-type="Button"
+                data-ui-id="back"
+                data-ui-skin="link"
+                type="button">返回</button>
+    </div>
+</form>

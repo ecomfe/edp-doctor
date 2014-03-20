@@ -31,6 +31,9 @@ exports.start = function (args, opts) {
     // 检查引用路径是否正确
     require( './lib/check-require-path.js' )( args, opts );
 
+    // 检查资源引用路径
+    require( './lib/check-resource-path.js' )( args, opts );
+
     // 检查项目中是否存在相同的文件
     // TODO
 

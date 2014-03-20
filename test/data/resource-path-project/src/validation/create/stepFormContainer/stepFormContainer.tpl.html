@@ -1,0 +1,66 @@
+<!-- target: TPL_validation_create_stepformcontainer -->
+<div id="formContainer" class="formContainer">
+    <div class="bk-link-nav clearfix">
+        <a href="#/validation/list">企业百科管理</a>
+        <span>&gt;&gt;<!-- if: ${update} -->更新企业百科申请<!-- else -->填写企业百科申请<!-- /if --></span>
+        <!-- if: !${update} -->
+        <hr/>
+        <div class="tracker">
+        <div class="tracker-item-wrapper tracker-item-wrapper-first">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写企业资质</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper tracker-item-wrapper-current">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写行业资质</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写企业百科申请</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">
+                确认信息并付款
+            </div>
+            <div class="item-tracker-end"></div>
+        </div>
+    </div>
+        <!-- /if -->
+    </div>
+    <!-- if: ${failedReason} -->
+    <div class="failedReason">审批拒绝原因：${failedReason}</div>
+    <!-- /if -->
+</div>
+<div class="buttonSet">
+    <div class="addBlock">
+        <button data-ui-type="Button"
+                data-ui-id="addButton"
+                data-ui-skin="link"
+                class="addIndustry"
+                type="button">添加行业资质</button>
+        <span class="bk-aux">（部分行业需添加相关资质方向可开通企业百科。<a href="http://baike.baidu.com/view/2455319.htm" target="_blank">查看详情</a>）</span>
+    </div>
+    <!-- if: ${update} -->
+    <button data-ui-type="Button"
+            data-ui-id="saveButton"
+            type="button">保存</button>
+    <button data-ui-type="Button"
+            data-ui-id="submitButton"
+            type="button">提交</button>
+    <!-- else -->
+    <button data-ui-type="Button"
+            data-ui-id="submitButton"
+            type="button">下一步</button>
+    <button data-ui-type="Button"
+            data-ui-id="prevButton"
+            type="button">返回上一步</button>
+    <button data-ui-type="Button"
+            data-ui-id="skipButton"
+            class="skipButton"
+            type="button">跳过本步骤</button>
+    <!-- /if -->
+</div>
