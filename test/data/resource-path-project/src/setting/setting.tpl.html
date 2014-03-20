@@ -1,0 +1,98 @@
+<!-- target: TPL_setting -->
+<form class="setting-form"
+    data-ui-type="Form"
+    data-ui-id="form"
+    data-ui-auto-validate="true"
+    method="POST">
+    <div class="form-title-bar">个人设置</div>
+    <div class="form-data-body">
+        <div class="form-row">
+            <div class="form-key">首选邮箱：</div>
+            <div class="form-value">
+                <input data-ui-id="email1"
+                    data-ui-type="TextBox"
+                    data-ui-pattern="${rule.mail.pattern}"
+                    data-ui-required="required"
+                    data-ui-max-length="${rule.mail.maxLength}"
+                    data-ui-mode="text"
+                    name="contactEmail1"
+                    value="${defaultFormData.contactEmail1}" />
+                <span class="red">*</span>
+                <span class="bk-aux">必填</span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key">联系人1：</div>
+            <div class="form-value">
+                <input data-ui-id="contact1"
+                    data-ui-type="TextBox"
+                    data-ui-mode="text"
+                    data-ui-max-length="${rule.maxLength}"
+                    name="contact1"
+                    value="${defaultFormData.contact1}" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key">联系人1电话：</div>
+            <div class="form-value">
+                <input data-ui-id="moblie1"
+                    data-ui-type="TextBox"
+                    data-ui-pattern="${rule.phone.pattern}"
+                    data-ui-mode="text"
+                    data-ui-max-length="${rule.maxLength}"
+                    name="contactCellPhone1"
+                    value="${defaultFormData.contactCellPhone1}" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key">备用邮箱：</div>
+            <div class="form-value">
+                <input data-ui-id="email2"
+                    data-ui-type="TextBox"
+                    data-ui-pattern="${rule.mail.pattern}"
+                    data-ui-mode="text"
+                    data-ui-max-length="${rule.mail.maxLength}"
+                    name="contactEmail2"
+                    value="${defaultFormData.contactEmail2}" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key">联系人2：</div>
+            <div class="form-value">
+                <input data-ui-id="contact2"
+                    data-ui-type="TextBox"
+                    data-ui-mode="text"
+                    data-ui-max-length="${rule.maxLength}"
+                    name="contact2"
+                    value="${defaultFormData.contact2}" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key">联系人2电话：</div>
+            <div class="form-value">
+                <input data-ui-id="moblie2"
+                    data-ui-type="TextBox"
+                    data-ui-pattern="${rule.phone.pattern}"
+                    data-ui-mode="text"
+                    data-ui-max-length="${rule.maxLength}"
+                    name="contactCellPhone2"
+                    value="${defaultFormData.contactCellPhone2}" />
+            </div>
+        </div>
+    </div>
+    <div class="form-submit-body">
+        <div class="form-row">
+            <div class="form-value">
+                <button data-ui-type="Button" 
+                    data-ui-id="submit"
+                    type="submit"
+                    class="form-submit-button">提交</button>
+                <button data-ui-type="Button" 
+                    data-ui-id="cancel"
+                    data-ui-skin="link"
+                    type="button"
+                    class="form-cancel-button">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

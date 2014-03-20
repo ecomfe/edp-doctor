@@ -5,7 +5,7 @@
 
 define(function (require) {
 
-    var dom = require('saber-dom');
+    var dom = require('/saber-dom');
     var Resolver = require('saber-promise');
 
     var exports = {};

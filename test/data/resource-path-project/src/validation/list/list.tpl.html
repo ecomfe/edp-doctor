@@ -1,0 +1,31 @@
+<!-- target: TPL_validation_list_list -->
+
+<div class="account-info">
+	<table width="100%" style="padding:10px;">
+		<tr>
+			<td rowspan="2" width="15%">账户概览</td>
+			<td width="25%">总付款额</td>
+			<td width="30%">总浏览量</td>
+			<td rowspan="2" width="10%">
+                <a href="#/validation/create/stepEnterprise" class="create-btn" style="">新建企业百科</a>
+            </td>
+		</tr>
+		<tr>
+			<td>
+				<span data-ui-id="amount"
+					data-ui-type="Label">
+                    <!-- if: ${summary.amount} --> ${summary.amount} <!-- else --> -- <!-- /if --></span>
+			</td>
+			<td>
+                <span data-ui-id="pv" data-ui-type="Label" value="${summary.pv}">
+                    <!-- if: ${summary.pv} --> ${summary.pv} <!-- else --> -- <!-- /if --></span>
+            </td>
+		</tr>
+	</table>
+</div>
+
+<div data-ui-type="Table" data-ui-id="table" data-ui-datasource="@tableData"
+    data-ui-extension-tip-type="TableTip"
+    data-ui-extension-command-type="Command">
+</div>
+
