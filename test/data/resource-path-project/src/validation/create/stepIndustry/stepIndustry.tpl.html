@@ -1,0 +1,85 @@
+<!-- target: TPL_validation_create_stepindustry -->
+<form class="industry-form"
+    data-ui-type="Form"
+    data-ui-id="form"
+    data-ui-auto-validate="true"
+    method="POST">
+    <div class="form-title-bar"><!-- if: ${update} -->更新行业资质<!-- else -->填写行业资质<!-- /if --><button data-ui-id="deleteButton" data-ui-type="Button" data-ui-skin="layerClose" class="form-close" type="button"></button></div>
+    <div class="form-data-body" style="border:1px solid #BAD5F1;border-width:0 1px 1px 1px;">
+        <div class="form-row-hidden">
+            <input data-ui-type="TextBox"
+                data-ui-id="licenseId"
+                data-ui-mode="text" 
+                type="hidden"
+                value="${defaultFormData.id}"
+                name="id" />
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>请选择行业类型：</div>
+            <div class="form-value">
+                <select data-ui="type:Select;id:industryType;width:183;"
+                    data-ui-required="required"
+                    name="industryType">
+                    <option value="">请选择</option>
+                    <!-- for: ${industryType} as ${et} -->
+                    <option value="${et.v}">${et.l}</option>
+                    <!-- /for -->
+                </select>
+            </div>
+        </div>        
+        <div class="form-row">
+            <div class="form-key form-key-validate"></div>
+            <div class="form-value">
+                <span class="red"
+                    data-ui-id="tipsLabel"
+                    data-ui-type="Label"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>资质文件编号或登记号：</div>
+            <div class="form-value">
+                <input data-ui-id="regNo"
+                    data-ui-type="TextBox"
+                    data-ui-required="required"
+                    data-ui-mode="text"
+                    name="regNo"
+                    value="${defaultFormData.regNo}" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>资质行业名称：</div>
+            <div class="form-value">
+                <input data-ui-id="industryName"
+                    data-ui-type="TextBox"
+                    data-ui-required="required"
+                    data-ui-mode="text"
+                    name="industryName"
+                    value="${defaultFormData.industryName}" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>资质文件图片：</div>
+            <div class="form-value">
+                <div class="upload-row">
+                    <div data-ui-type="Uploader"
+                        data-ui-id="uploader"></div>
+                </div>
+                <div class="bk-aux">1.彩色原件电子版（数码照片拍摄照片或彩色扫描仪的扫描件）；</div>
+                <div class="bk-aux">2.支持的图片格式：gif/jpg/jpeg/png，大小不得超过20M；</div>
+                <div class="bk-aux">3.照片为整个文件，信息清晰可见，不可涂改。</div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>资质有效期至：</div>
+            <div class="form-value">
+                <div data-ui-id="dateEnd"
+                    data-ui-type="Calendar"
+                    data-ui-width="200"
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- target: TPL_validation_create_stepindustry_child -->
+<!-- import: TPL_validation_create_stepindustry -->

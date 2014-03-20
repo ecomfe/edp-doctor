@@ -1,0 +1,141 @@
+<!-- target: TPL_validation_create_stepenterprise_stepenterprise_header -->
+<div class="bk-link-nav clearfix" style="">
+    <a href="#/validation/list">企业百科管理</a>
+    <span>&gt;&gt;填写企业百科申请</span>
+    <hr/>
+    <div class="tracker">
+        <div class="tracker-item-wrapper tracker-item-wrapper-first tracker-item-wrapper-current">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写企业资质</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写行业资质</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">填写企业百科申请</div>
+            <div class="item-tracker-end"></div>
+        </div>
+        <div class="tracker-item-wrapper">
+            <div class="item-tracker-start"></div>
+            <div class="item-tracker-body">
+                确认信息并付款
+            </div>
+            <div class="item-tracker-end"></div>
+        </div>
+    </div>
+</div>
+
+<!-- target: TPL_validation_create_stepenterprise_stepenterprise_main -->
+<form class="setting-form"
+    data-ui-type="Form"
+    data-ui-id="form"
+    data-ui-auto-validate="true"
+    method="POST">
+    <div class="form-title-bar"><!-- if: ${update} -->更新企业资质<!-- else -->填写企业资质<!-- /if --></div>
+    <div class="form-data-body">
+        <!-- if: ${defaultFormData.failedReason} -->
+        <div class="form-row">
+            <div class="form-key form-key-validate red">审批拒绝原因：</div>
+            <div class="form-value">
+                <span class="red"
+                    data-ui-id="failedReason"
+                    data-ui-type="Label">${defaultFormData.failedReason}</span>
+            </div>
+        </div>
+        <!-- /if -->
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>请选择主体类型：</div>
+            <div class="form-value">
+                <select data-ui="type:Select;id:enterpriseType;width:183;displayText:123;"
+                    data-ui-required="required"
+                    name="enterpriseType">
+                    <option value="">请选择</option>
+                    <!-- for: ${enterpriseType} as ${et} -->
+                    <option value="${et.v}">${et.l}</option>
+                    <!-- /for -->
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"></div>
+            <div class="form-value">
+                <span class="red"
+                    data-ui-id="qualiLbl"
+                    data-ui-type="Label"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>资质文件编号或登记号：</div>
+            <div class="form-value">
+                <input data-ui-id="regNo"
+                    data-ui-type="TextBox"
+                    data-ui-required="required"
+                    data-ui-mode="text"
+                    name="regNo"
+                    value="${defaultFormData.regNo}" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>资质主体名称：</div>
+            <div class="form-value">
+                <input data-ui-id="enterpriseName"
+                    data-ui-type="TextBox"
+                    data-ui-required="required"
+                    data-ui-mode="text"
+                    name="enterpriseName"
+                    value="${defaultFormData.enterpriseName}" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>资质文件图片：</div>
+            <div class="form-value">
+                <div class="upload-row">
+                    <div data-ui-type="Uploader"
+                        data-ui-id="uploader"></div>
+                </div>
+                <div class="bk-aux">1.彩色原件电子版（数码照片拍摄照片或彩色扫描仪的扫描件）；</div>
+                <div class="bk-aux">2.支持的图片格式：gif/jpg/jpeg/png，大小不得超过20M；</div>
+                <div class="bk-aux">3.照片为整个文件，信息清晰可见，不可涂改。</div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-key form-key-validate"><span class="red">*</span>资质有效期至：</div>
+            <div class="form-value">
+                <div data-ui-id="dateEnd"
+                    data-ui-type="Calendar"
+                    data-ui-width="200"
+                    data-ui-value="${defaultFormData.dateEnd}"
+                    width="200px"
+                    name="dateEnd">
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- target: TPL_validation_create_stepenterprise_stepenterprise -->
+    <!-- import: TPL_validation_create_stepenterprise_stepenterprise_header -->
+    <!-- import: TPL_validation_create_stepenterprise_stepenterprise_main -->
+    <!-- import: stepenterprise_submit_row -->
+</form>
+
+<!-- target: stepenterprise_submit_row -->
+<div class="form-row">
+        <div class="form-value">
+            <button data-ui-type="Button" 
+                data-ui-id="submit"
+                data-ui-skin="winter"
+                type="submit">下一步</button>
+            <button data-ui-type="Button" 
+                data-ui-id="cancel"
+                data-ui-skin="link"
+                type="button">取消</button>
+        </div>
+    </div>
+
+<!-- target: TPL_validation_create_stepenterprise_stepenterprise_child -->
+<!-- import: TPL_validation_create_stepenterprise_stepenterprise_main -->
+</form>
