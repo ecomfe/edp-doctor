@@ -49,7 +49,7 @@ exports.start = function (args, opts) {
             }
         }
     }
-}
+};
 
 if ( module === require.main ) {
     exports.start();
