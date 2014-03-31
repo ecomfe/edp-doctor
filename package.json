@@ -12,8 +12,7 @@
     "url": "git://github.com/ecomfe/edp-doctor.git"
   },
   "dependencies": {
-    "edp-core": "~1.0.9",
-    "glob": "~3.2.9"
+    "edp-core": "~1.0.9"
   },
   "author": "leeight@gmail.com",
   "license": "BSD-2-Clause",
