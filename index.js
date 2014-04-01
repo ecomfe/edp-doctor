@@ -35,7 +35,7 @@ exports.start = function (args, opts) {
     require( './lib/check-resource-path.js' )( args, opts );
 
     // 检查重复的target名字
-    require('./lib/check-tpl-target.js')(args, opts);
+    require( './lib/check-tpl-target.js' )( args, opts );
 
     // 检查项目中是否存在相同的文件
     // TODO
