@@ -1,18 +1,14 @@
 {
   "name": "edp-doctor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "edp-doctor =======",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "npm ln edp-core"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/ecomfe/edp-doctor.git"
   },
   "dependencies": {
-    "edp-core": "~1.0.9"
+    "edp-core": "~1.0.12"
   },
   "author": "leeight@gmail.com",
   "license": "BSD-2-Clause",
@@ -20,7 +16,7 @@
     "url": "https://github.com/ecomfe/edp-doctor/issues"
   },
   "scripts": {
-      "test": "make -C test"
+    "test": "make -C test"
   },
   "homepage": "https://github.com/ecomfe/edp-doctor"
 }
