@@ -19,11 +19,13 @@ var fs = require('fs');
 var edp = require( 'edp-core' );
 
 exports.start = function (args, opts) {
+    var isPackage = !!opts[ 'package' ];
+
     // 如果output目录存在，检查css引用的img是否正确
     require( './lib/check-output.js' )( args, opts );
 
     // 检查项目的配置是否正常
-    require( './lib/check-project-config.js' )( args, opts );
+    !isPackage && require( './lib/check-project-config.js' )( args, opts );
 
     // 检查module.conf配置内容是否正常，比如paths，deps之类的
     require( './lib/check-module-config.js' )( args, opts );
@@ -32,7 +34,7 @@ exports.start = function (args, opts) {
     require( './lib/check-require-path.js' )( args, opts );
 
     // 检查资源引用路径
-    require( './lib/check-resource-path.js' )( args, opts );
+    !isPackage && require( './lib/check-resource-path.js' )( args, opts );
 
     // 检查重复的target名字
     require( './lib/check-tpl-target.js' )( args, opts );
