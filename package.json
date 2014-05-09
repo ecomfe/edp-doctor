@@ -1,6 +1,6 @@
 {
   "name": "edp-doctor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "edp-doctor =======",
   "main": "index.js",
   "repository": {
@@ -8,7 +8,8 @@
     "url": "git://github.com/ecomfe/edp-doctor.git"
   },
   "dependencies": {
-    "edp-core": "~1.0.12"
+    "edp-core": "~1.0.12",
+    "semver": "^2.2.1"
   },
   "author": "leeight@gmail.com",
   "license": "BSD-2-Clause",
