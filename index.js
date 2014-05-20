@@ -43,6 +43,10 @@ exports.start = function (args, opts) {
     // 检查dep目录下面的东东是否是合法的package
     !isPackage && require( './lib/check-dep.js' )( args, opts );
 
+    // 检查文件头是否有BOM
+    !isPackage && require( './lib/check-bom.js' )( args, opts );
+
+
     // 检查项目中是否存在相同的文件
     // TODO
 
