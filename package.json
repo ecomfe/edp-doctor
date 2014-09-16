@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "edp-core": "~1.0.12",
-    "semver": "^2.2.1"
+    "semver": "^2.2.1",
+    "underscore": "^1.7.0"
   },
   "author": "leeight@gmail.com",
   "license": "BSD-2-Clause",
