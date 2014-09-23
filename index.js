@@ -46,6 +46,9 @@ exports.start = function (args, opts) {
     // 检查文件头是否有BOM
     !isPackage && require( './lib/check-bom.js' )( args, opts );
 
+    // 检查 html 中擅自修改的 require.config
+    !isPackage && require('./lib/check-require-config.js')(args, opts);
+
 
     // 检查项目中是否存在相同的文件
     // TODO
